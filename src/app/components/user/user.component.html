@@ -1,0 +1,15 @@
+<h2 align="center">Banks</h2>
+<div class="container" align="center">
+  <div class="jumbotron">
+    <table>
+      <thead>
+        <th>Parent Banks</th>
+        <th>Children Banks</th>
+      </thead>
+      <tbody *ngFor="let bank of data">
+        <td>{{bank.Parent_Entity_Name}}</td>
+        <td>{{bank.Children_Banks}}</td>
+      </tbody>
+    </table>
+  </div>
+</div>
