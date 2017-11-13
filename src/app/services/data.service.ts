@@ -12,4 +12,9 @@ export class DataService {
       return this.http.get('http://localhost:3016/api/home')
       .map(res => res.json())
   }
+
+  getChildren(){
+      return this.http.get('http://localhost:3016/api/home/AAA Bank Ltd')
+      .map(res => res.json())
+  }
 }

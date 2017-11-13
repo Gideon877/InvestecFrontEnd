@@ -1,15 +1,17 @@
-<h2 align="center">Banks</h2>
 <div class="container" align="center">
-  <div class="jumbotron">
-    <table>
-      <thead>
+    <hr>
+  <table class="table table-striped table-hover table-bordered">
+    <thead class="thead-dark">
+      <tr>
         <th>Parent Banks</th>
         <th>Children Banks</th>
-      </thead>
-      <tbody *ngFor="let bank of data">
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let bank of data" class="table-info" (click)="getChildren(bank)">
         <td>{{bank.Parent_Entity_Name}}</td>
         <td>{{bank.Children_Banks}}</td>
-      </tbody>
-    </table>
-  </div>
+      </tr>
+    </tbody>
+  </table>
 </div>

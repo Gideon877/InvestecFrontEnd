@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {Http} from '@angular/http'
+import 'rxjs/add/operator/map'
 
 import { DataService } from '../../services/data.service'
 @Component({
@@ -8,21 +10,34 @@ import { DataService } from '../../services/data.service'
   encapsulation: ViewEncapsulation.None
 })
 export class UserComponent implements OnInit {
-  name: string;
-  data:Data[];
-  constructor(private dataService: DataService) {
+  data: Data[];
+  children: Children[];
 
+  constructor(private dataService: DataService) {
   }
 
   ngOnInit() {
-    this.name = 'Thabang Gideon'
     this.dataService.getData().subscribe((data) => {
       this.data = data;
+    })
+
+    this.dataService.getChildren().subscribe((children) => {
+
+      this.children = children;
     })
   }
 }
 
 interface Data {
-    Children_Banks: number,
-    Parent_Entity_Name: string
+  Children_Banks: number,
+  Parent_Entity_Name: string
+}
+
+interface Children {
+  id: number,
+  Parent_Entity_Id: number,
+  Parent_Entity_Name: string,
+  Relationship_Type: string,
+  Entity_Id: number,
+  Entity_Name: string
 }
