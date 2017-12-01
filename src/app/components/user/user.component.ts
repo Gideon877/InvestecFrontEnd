@@ -28,6 +28,7 @@ export class UserComponent implements OnInit {
       var id: number = item.Entity_Id
       this.dataService.getLimits(id).subscribe((limit) => {
           this.limit = limit;
+           console.log('-----', limit);
       })
   }
 
