@@ -33,7 +33,7 @@
           <tr *ngFor="let item of children" (click)="childLimit(item)">
             <td>{{item.id}}</td>
             <!-- <td>{{item.Parent_Entity_Id}}</td> -->
-            <td>{{item.Entity_Id}}</td>
+            <td><a href="#">{{item.Entity_Id}}</a></td>
             <td>{{item.Entity_Name}}</td>
             <td>{{item.Relationship_Type}}</td>
           </tr>

@@ -17,6 +17,7 @@ export class UserComponent implements OnInit {
   constructor(private dataService: DataService) {
   }
 
+
   onSelect(bank){
       var bank_name: string = bank.Parent_Entity_Name;
       this.dataService.getChildren(bank_name).subscribe((children) => {
